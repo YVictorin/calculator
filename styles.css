@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calc-container {
+    background-color: #1C1C1C;
+    width: 450px;
+    height: 800px;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.answer {
+    width: 100%;
+    height: 40%;
+    border-radius: 30px;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+    color: white;
+    padding: 1.5rem;
+    position: relative;
+   
+
+}
+
+.buttons {
+    width: 100%;
+    height: 60%;
+   
+}
+
+.buttons form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    place-items: center;
+    padding-bottom: 3rem;
+}
+
+.buttons form button {
+  width: 70px;
+  height: 70px; 
+  border-radius: 50%;
+}
+
+
+#wide {
+    grid-column: span 2;
+    width: 200px;
+    border-radius: 40px; 
+    text-align: left;
+    padding-left: 2.3rem;
+}
+
+button {
+    font-size: 2em;
+    border: none;
+    background-color: #505050;
+    color: white;
+}
+
+button:nth-child(-n + 3){
+    background-color: #D4D4D2 ;
+    color: #1C1C1C;
+}
+
+button:nth-child(4n), button:last-child {
+    background-color: #FF9500 ;
+}
+
+@media(width < 500px) {
+  .calc-container {
+    transform: scale(0.5) translate(-100%, -100%);
+    
+  }
+}
+
+
+
