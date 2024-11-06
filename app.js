@@ -1,6 +1,10 @@
 const buttons = document.getElementsByTagName('button');
 const buttonArr = [...buttons];
 
+const form = document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+})
+
 const answer = document.querySelector('.answer');
 const numbers = document.querySelectorAll('.numbers');
 const operators = document.querySelectorAll('.operators');
