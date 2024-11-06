@@ -83,6 +83,8 @@ button:nth-child(4n), button:last-child {
     background-color: #FF9500 ;
 }
 
+
+
 @media(width < 500px) {
   .calc-container {
     transform: scale(0.5) translate(-100%, -100%);

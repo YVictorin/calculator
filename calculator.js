@@ -1,8 +1,7 @@
 class Calculator {
     _operations = [];
     _numbers = [];
-    _number;
-    _operator
+   
 
     constructor(number = '', operator = '') {
         this._number = number;
@@ -10,15 +9,10 @@ class Calculator {
     }
 
 
-    
-
     get numbers(){
         return this._numbers;
     }
 
-    get operations() {
-       return this._operations
-    }
 
     set numbers(value) {
         if(value === NaN) {
@@ -28,37 +22,16 @@ class Calculator {
         }
         
     }
-    
+
+    get operations() {
+       return this._operations
+    }
+
     set operations(newOperation) {
         this._operations.push(newOperation);   
     }
 
-    set number(number) {
-        this._number = number
-    }
 
-    get number() {
-        return this._number;
-    }
-
-    get operator() {
-        return this._operator;
-    }
-
-    set operator(newOperator) {
-        this._operator = newOperator;
-    }
-
-
-//   calculate(number, operator) {
-//     let result = 0;
-
-//     if(this._operator === '+') {
-//         result = this.add();
-//     }
-
-//     return result;
-//   }
 
     calculate() {
         this._operations.forEach((operation) => {
@@ -84,10 +57,11 @@ class Calculator {
     }
 
     pmdas() { 
+        //getting the length of the longer array
         const len = Math.max(this._numbers.length, this._operations.length);
         const result = [];
 
-    //pushing the alternating values of numbers and operators array to make an equation
+    // alternating the values pushed into the result array to make an equation
         for(let i = 0; i < len; i++) {
             if(this._numbers[i]) {
                 result.push(this._numbers[i])
@@ -99,10 +73,10 @@ class Calculator {
 
         }
 
-        //removes the commas from the previous array named result and changes the former operators symbols to * / -
+        //removes the commas from the array named result and changes the symbols in the operators array to * / -
         let stringEquation = String(result).replace(/[,]/g , '').replace(/[x]/g, '*').replace(/[÷]/g, '/').replace(/[−]/g, '-');
        
-        //eval solves a strings like a regular math equation
+        //eval() solves a strings like a regular math equation
         return eval(stringEquation);
 
       
