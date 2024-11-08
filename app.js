@@ -66,8 +66,7 @@ equals.addEventListener('click', () => {
        let splitOperations = allOperators.split('');
        splitOperations.splice(-1, 1);  //removes last '=' element
 
-
-      
+       //preperating and doing calculations
         calculator._numbers = splitNums;
         calculator._operations = splitOperations;
         answer.innerText = calculator.calculate();
@@ -76,20 +75,13 @@ equals.addEventListener('click', () => {
         if(splitOperations.length > 1) {
            answer.innerText = calculator.pmdas();
         }
+
 })
 
 //when the AC button is clicked the answer screen is reset
 allClear.addEventListener('click', () => {
     answer.innerText = '';
 })
-
-
-
-
-
-
-
-
 
 
 

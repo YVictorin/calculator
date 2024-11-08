@@ -34,6 +34,10 @@ class Calculator {
 
 
     calculate() {
+        if(this.errorCheck()){
+            return this.errorCheck();
+        }
+
         this._operations.forEach((operation) => {
             switch(operation) {
                 case '−':
@@ -56,12 +60,16 @@ class Calculator {
         return this._number;
     }
 
-    pmdas() { 
+    pmdas() {     
+        if(this.errorCheck()){
+            return this.errorCheck();
+        }
+
         //getting the length of the longer array
         const len = Math.max(this._numbers.length, this._operations.length);
         const result = [];
 
-    // alternating the values pushed into the result array to make an equation
+    // alternating the values pushed into the result array in order to make an equation
         for(let i = 0; i < len; i++) {
             if(this._numbers[i]) {
                 result.push(this._numbers[i])
@@ -75,9 +83,9 @@ class Calculator {
 
         //removes the commas from the array named result and changes the symbols in the operators array to * / -
         let stringEquation = String(result).replace(/[,]/g , '').replace(/[x]/g, '*').replace(/[÷]/g, '/').replace(/[−]/g, '-');
-       
-        //eval() solves a strings like a regular math equation
-        return eval(stringEquation);
+
+        //eval() solves a string like a regular math equation, this is also rounding two decimal places
+        return Math.round(eval(stringEquation) * 100) / 100;
 
       
     }
@@ -97,6 +105,22 @@ class Calculator {
 
    divide() {
     return this._numbers.reduce((previousValue, currentValue) => previousValue / currentValue);
+   }
+
+
+   
+
+   errorCheck() {     
+        //if the user entered nothing
+        if(this._operations.length === 0 || this._numbers.length === 0) {
+            return 'try again';
+        }
+        //check to see if the last number the user entered was 0 and a division sign
+        if(this._operations[this._operations.length - 1] === '÷' && this._numbers[this._numbers.length - 1] === '0') {
+            return "err DIV/0!";
+        } 
+
+
    }
 
 }
