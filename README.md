@@ -4,14 +4,6 @@
 
 A simple and intuitive calculator built with HTML, CSS, and JavaScript, which supports basic arithmetic operations and handles multiple operations with proper order of operations (PMDAS).
 
-### NPM Version
-[![NPM Version](https://badge.fury.io/js/my-crazy-module.svg)](https://badge.fury.io/js/my-crazy-module)
-
-### Build Status
-[![Build Status](https://travis-ci.org/yourusername/calculator.svg?branch=main)](https://travis-ci.org/yourusername/calculator)
-
-### Downloads Stats
-[![Downloads](https://img.shields.io/npm/dw/my-crazy-module.svg)](https://www.npmjs.com/package/my-crazy-module)
 
 ## Overview
 
