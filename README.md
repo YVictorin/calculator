@@ -1,9 +1,8 @@
 # Calculator App
 
-![](preview.png)
-
 A simple and intuitive calculator built with HTML, CSS, and JavaScript, which supports basic arithmetic operations and handles multiple operations with proper order of operations (PMDAS).
 
+![](preview.png)
 
 ## Overview
 
